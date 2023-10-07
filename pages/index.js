@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const socialLinks = [
   {
@@ -133,6 +134,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <Analytics />
     </>
   );
 }
