@@ -48,7 +48,7 @@ export default function Home() {
         <div className="grid grid-cols-2 px-6 md:px-10 xl:px-24 max-w-[1440px] mx-auto w-full">
           <div className="flex flex-col gap-4 md:gap-6 justify-center xl:col-span-1 col-span-full xl:order-0 order-1 xl:items-start items-center">
             <h1 className="text-xl md:text-4xl xl:text-6xl font-semibold text-[#F0F0F0] xl:block hidden">
-              ॐ श्री सतनाम साक्षी
+              ॐ श्री सतनाम साक्षी <br/> mero kanha
             </h1>
 
             <h3 className="text-lg md:text-xl xl:text-3xl font-semibold text-[#E5D283] xl:text-left text-center xl:block hidden">
@@ -85,8 +85,8 @@ export default function Home() {
               className="xl:w-full rounded-full shadow-xl w-4/5 max-w-lg border-2 border-[#E5D283]"
             />
 
-            <h1 className="text-xl md:text-4xl xl:text-6xl font-semibold text-[#F0F0F0] xl:hidden block mt-4">
-              ॐ श्री सतनाम साक्षी
+            <h1 className="text-xl md:text-4xl xl:text-6xl font-semibold text-[#F0F0F0] xl:hidden block mt-4 text-center">
+              ॐ श्री सतनाम साक्षी <br/> mero kanha
             </h1>
 
             <h3 className="text-lg md:text-xl xl:text-3xl font-semibold text-[#E5D283] xl:text-left text-center xl:hidden block">
