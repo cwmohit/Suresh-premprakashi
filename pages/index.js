@@ -1,118 +1,119 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/suresh.premprakashi.5",
+    icon: "facebook",
+  },
+  {
+    name: "Youtube",
+    url: "https://www.youtube.com/@suresh47720",
+    icon: "youtube",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/chotudib",
+    icon: "instagram",
+  },
+  {
+    name: "Snapchat",
+    url: "https://www.snapchat.com/add/chotusuresh",
+    icon: "snapchat",
+  },
+];
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-center main-bg-wrapper pb-10 xl:pb-0`}
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className="grid grid-cols-2 px-6 md:px-10 xl:px-24 max-w-[1440px] mx-auto w-full">
+        <div className="flex flex-col gap-4 md:gap-6 justify-center xl:col-span-1 col-span-full xl:order-0 order-1 xl:items-start items-center">
+          <h1 className="text-xl md:text-4xl xl:text-6xl font-semibold text-[#F0F0F0] xl:block hidden">
+            ॐ श्री सतनाम साक्षी
+          </h1>
+
+          <h3 className="text-lg md:text-xl xl:text-3xl font-semibold text-[#E5D283] xl:text-left text-center xl:block hidden">
+            Connect with us on social media <br />{" "}
+            <span className="text-[#F0F0F0]">(Suresh Premprakashi)</span>
+          </h3>
+
+          <div className="flex flex-col gap-4 xl:gap-6 xl:max-w-xl w-full">
+            {socialLinks.map((link) => (
+              <div
+                className="flex border-1 border-[#12486B] shadow-xl bg-white p-4 rounded-lg gap-4 items-center cursor-pointer"
+                onClick={() => {
+                  window.open(link.url, "_blank");
+                }}
+              >
+                <img
+                  src={`${link.icon}.png`}
+                  className="w-8 shadow-xl"
+                  alt={link.name}
+                />
+                <div className="flex flex-col w-full">
+                  <h5 className="border-b pb-2 text-base">{link.name}</h5>
+                  <p className="pt-2 text-gray-500 text-sm break-all	">
+                    {link.url}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col py-6 md:p-10 items-center justify-center xl:col-span-1 col-span-full xl:order-1 order-0">
+          <img
+            src="/profile-picture.jpeg"
+            className="xl:w-full rounded-full shadow-xl w-4/5 max-w-lg border-2 border-[#E5D283]"
+          />
+
+          <h1 className="text-xl md:text-4xl xl:text-6xl font-semibold text-[#F0F0F0] xl:hidden block mt-4">
+            ॐ श्री सतनाम साक्षी
+          </h1>
+
+          <h3 className="text-lg md:text-xl xl:text-3xl font-semibold text-[#E5D283] xl:text-left text-center xl:hidden block">
+            Connect with us on social media <br />{" "}
+            <span className="text-[#F0F0F0]">(Suresh Premprakashi)</span>
+          </h3>
+
+          <div className="flex mt-6 gap-4 w-full flex-wrap md:flex-nowrap">
+            <div
+              className="bg-[#F0F0F0] px-4 py-4 cursor-pointer flex items-center rounded-lg gap-2 w-full md:text-lg text-xs"
+              onClick={() => {
+                window.location.href = `tel:+919314024850`;
+              }}
+            >
+              <img
+                src={`/telephone.png`}
+                className="w-6 shadow-xl"
+                alt="phone"
+              />
+              Call
+            </div>
+            <div
+              className="bg-[#F0F0F0] px-4 py-4 cursor-pointer flex items-center rounded-lg gap-2 w-full md:text-lg text-xs"
+              onClick={() => {
+                window.open("https://wa.link/jlezy3", "_blank");
+              }}
+            >
+              <img
+                src={`/whatsapp.png`}
+                className="w-6 shadow-xl"
+                alt="whatsapp"
+              />
+              Whatsapp
+            </div>
+            <div
+              className="bg-[#F0F0F0] px-4 py-4 cursor-pointer flex items-center rounded-lg gap-2 w-full md:text-lg text-xs"
+              onClick={() => {
+                window.location.href = `mailto:Chotudib@gmail.com`;
+              }}
+            >
+              <img src={`/gmail.png`} className="w-6 shadow-xl" alt="email" />
+              Email
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
